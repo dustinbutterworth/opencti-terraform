@@ -8,7 +8,7 @@ resource "aws_instance" "opencti_instance" {
   root_block_device {
     volume_size = var.root_volume_size
   }
-  subnet_id = var.subnet_id
+  subnet_id = aws_subnet.opencti_subnet.id
 
   # The wrapper script is used by each of the providers and each variable has to be filled out in order to run. Unfortunately, this means that if you change something in one provider, you have to change it in each of the others. It's not ideal, but FYI.
   user_data = templatefile("../userdata/installation-wrapper-script.sh", {

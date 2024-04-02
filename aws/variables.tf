@@ -39,13 +39,3 @@ variable "storage_bucket" {
   type        = string
   default     = "opencti-storage"
 }
-
-variable "subnet_id" {
-  description = "The subnet ID to use."
-  type        = string
-}
-
-variable "vpc_id" {
-  description = "The VPC ID to use."
-  type        = string
-}
